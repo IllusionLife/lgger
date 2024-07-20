@@ -11,7 +11,7 @@ long_description = (here / "README.md").read_text(encoding="utf-8")
 
 setup(
     name="lgger",
-    version="0.1.2",
+    version="0.1.3",
     description="A package for writing logs to log files.",
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -24,7 +24,7 @@ setup(
         "License :: OSI Approved :: MIT License",
     ],
     keywords="logging, simple, files",
-    packages=["lgger", "lgger.lgger_src"],
+    packages=["lgger", "lgger.lgger_src", "lgger.templates"],
     python_requires=">=3.7, <4",
     package_data={
         "configurations": ["lgger/config/lgger.conf"],
