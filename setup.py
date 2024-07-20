@@ -24,7 +24,7 @@ setup(
         "License :: OSI Approved :: MIT License",
     ],
     keywords="logging, simple, files",
-    packages=["lgger"],
+    packages=["lgger", "lgger.lgger_src"],
     python_requires=">=3.7, <4",
     package_data={
         "configurations": ["lgger/config/lgger.conf"],
