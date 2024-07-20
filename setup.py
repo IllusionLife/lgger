@@ -11,24 +11,22 @@ long_description = (here / "README.md").read_text(encoding="utf-8")
 
 setup(
     name="lgger",
-    version="0.1.0",
+    version="0.1.1",
     description="A package for writing logs to log files.",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    #url="https://github.com/pypa/sampleproject",  # Optional
+    url="https://github.com/IllusionLife/lgger",
     classifiers=[
         "Development Status :: 3 - Alpha",
         "Intended Audience :: Developers",
         "Topic :: System :: Logging",
+        "Topic :: Utilities",
         "License :: OSI Approved :: MIT License",
     ],
     keywords="logging, simple, files",
-    package_dir={"": "logger_src"},
-    packages=find_packages(where="logger_src"),
+    packages=["lgger"],
     python_requires=">=3.7, <4",
-    # # If there are data files included in your packages that need to be
-    # # installed, specify them here.
-    # package_data={  # Optional
-    #     "sample": ["package_data.dat"],
-    # },
+    package_data={
+        "configurations": ["lgger/config/lgger.conf"],
+    },
 )

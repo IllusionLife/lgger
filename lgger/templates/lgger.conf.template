@@ -1,0 +1,5 @@
+datetimeformat=${LGGER_TIMESTAMP_FORMAT}
+default_filename=${LGGER_LOG_NAME}
+default_file_extension=${LGGER_LOG_EXTN}
+default_log_folder=${LGGER_LOG_DIR}
+log_encoding=${LGGER_ENC}
