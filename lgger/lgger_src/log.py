@@ -20,9 +20,14 @@ class Lgger(LogConf):
         super().__init__()
         self.default_loglvl = LogLvl(self.get_config('default_log_level', LogLvl.INFO.value))
         if not filename:
-            filename = self.get_config('default_filename') + self.get_config('default_file_extension')
+            filename = self.get_config('default_filename')
+            fileext = self.get_config('default_file_extension')
+            if fileext:
+                filename.rstrip('.')
+                filename += f".{fileext.lstrip('.')}"
             if not filename:
                 raise Exception("No log name provided and no default found.")
+
         if not filepath:
             filepath = normalize_dir(self.get_config('default_log_folder', './logs'))
             if not filepath:
