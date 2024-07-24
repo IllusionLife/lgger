@@ -1,2 +1,3 @@
 include README.md
-include templates/*.template
+
+recursive-include templates *.template
