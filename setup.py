@@ -11,7 +11,7 @@ long_description = (here / "README.md").read_text(encoding="utf-8")
 
 setup(
     name="lgger",
-    version="0.1.3",
+    version="0.1.3.1",
     description="A package for writing logs to log files.",
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -29,4 +29,5 @@ setup(
     package_data={
         "configurations": ["lgger/config/lgger.conf"],
     },
+    zip_safe=False,
 )
