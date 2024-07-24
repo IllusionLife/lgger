@@ -1,5 +1,5 @@
 # Always prefer setuptools over distutils
-from setuptools import setup, find_packages
+from setuptools import setup
 import pathlib
 
 here = pathlib.Path(__file__).parent.resolve()
@@ -10,7 +10,7 @@ long_description = (here / "README.md").read_text(encoding="utf-8")
 # Fields marked as "Optional" may be commented out.
 setup(
     name="lgger",
-    version="0.1.3.6",
+    version="0.1.4",
     description="A package for writing logs to log files.",
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -24,6 +24,7 @@ setup(
     ],
     keywords="logging, simple, files",
     python_requires=">=3.7, <4",
+
     package_data={"":["templates/*.template"]},
     include_package_data=True,
 )
