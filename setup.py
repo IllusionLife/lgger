@@ -10,7 +10,7 @@ long_description = (here / "README.md").read_text(encoding="utf-8")
 # Fields marked as "Optional" may be commented out.
 setup(
     name="lgger",
-    version="0.1.3.5",
+    version="0.1.3.6",
     description="A package for writing logs to log files.",
     long_description=long_description,
     long_description_content_type="text/markdown",
