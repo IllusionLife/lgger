@@ -23,8 +23,10 @@ setup(
         "License :: OSI Approved :: MIT License",
     ],
     keywords="logging, simple, files",
-    packages=find_packages(),
     python_requires=">=3.7, <4",
+    package_dir={"": "lgger"},
+    packages=find_packages("lgger"),
+    package_data={"templates":["*.template"]},
     include_package_data=True,
     zip_safe=False,
 )
