@@ -24,7 +24,7 @@ setup(
     ],
     keywords="logging, simple, files",
     python_requires=">=3.7, <4",
-    package_dir={"": "lgger"},
-    package_data={"templates":["*.template"]},
+    package_dir={"": ""},
+    package_data={"lgger/templates":["*.template"]},
     include_package_data=True,
 )
