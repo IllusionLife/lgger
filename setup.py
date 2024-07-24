@@ -9,6 +9,8 @@ long_description = (here / "README.md").read_text(encoding="utf-8")
 # Arguments marked as "Required" below must be included for upload to PyPI.
 # Fields marked as "Optional" may be commented out.
 
+recursive-include templates *.template
+
 setup(
     name="lgger",
     version="0.1.3.1",
@@ -24,10 +26,8 @@ setup(
         "License :: OSI Approved :: MIT License",
     ],
     keywords="logging, simple, files",
-    packages=["lgger", "lgger.lgger_src", "lgger.templates"],
+    packages=find_packages(),
     python_requires=">=3.7, <4",
-    package_data={
-        "configurations": ["lgger/config/lgger.conf"],
-    },
+    include_package_data=True,
     zip_safe=False,
 )
