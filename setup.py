@@ -8,9 +8,6 @@ long_description = (here / "README.md").read_text(encoding="utf-8")
 
 # Arguments marked as "Required" below must be included for upload to PyPI.
 # Fields marked as "Optional" may be commented out.
-
-recursive-include templates *.template
-
 setup(
     name="lgger",
     version="0.1.3.1",
