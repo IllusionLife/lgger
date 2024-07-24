@@ -1,5 +1,5 @@
 # Always prefer setuptools over distutils
-from setuptools import setup, find_packages
+from setuptools import setup
 import pathlib
 
 here = pathlib.Path(__file__).parent.resolve()
@@ -8,10 +8,9 @@ long_description = (here / "README.md").read_text(encoding="utf-8")
 
 # Arguments marked as "Required" below must be included for upload to PyPI.
 # Fields marked as "Optional" may be commented out.
-
 setup(
     name="lgger",
-    version="0.1.1",
+    version="0.1.4",
     description="A package for writing logs to log files.",
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -24,9 +23,8 @@ setup(
         "License :: OSI Approved :: MIT License",
     ],
     keywords="logging, simple, files",
-    packages=["lgger"],
     python_requires=">=3.7, <4",
-    package_data={
-        "configurations": ["lgger/config/lgger.conf"],
-    },
+
+    package_data={"":["templates/*.template"]},
+    include_package_data=True,
 )

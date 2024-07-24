@@ -19,16 +19,16 @@ intended to create a configuration file by using the [Lgger template] file.
 The enviromental variables are being set in the [env file] and here is the list
 of what each variable is being used for:
 
-| Env variable           | Config variable         |                      Intended use                       | Changable |            Default value             |
-|------------------------|:------------------------|:-------------------------------------------------------:|:---------:|:------------------------------------:|
-| LGGER_TMPL             |                         |             Stores to the templates folder              |           |    ${package_dir}/lgger/templates    |
-| LGGER_CONF_TMPL        |                         |      Stores the name of Lgger config template file      |           |         lgger.conf.template          |
-| LGGER_LOG_NAME         | default_filename        | Default log name if none is being provided in the code. |     Y     |      log_%Y-%m-%d `date format`      |
-| LGGER_LOG_EXTN         | default_file_extension  |               Default log file extention.               |     Y     |                 .log                 |
-| LGGER_LOG_DIR          | default_log_folder      |                 Default log directory.                  |     Y     |              ./logging               |
-| LGGER_ENC              | log_encoding            |                 Default log directory.                  |     Y     |              ./logging               |
-| LGGER_TIMESTAMP_FORMAT | datetimeformat          |           Log timestamp, used inside the log.           |     Y     | "%Y-%b-%d %H:%M:%S:%f" `date format` |
-| LGGER_CWD              |                         |          Stores the current working directory.          |           |             ${getcwd()}              |
+| Env variable           | Config variable         |                      Intended use                       | Changable |           Default value            |
+|------------------------|:------------------------|:-------------------------------------------------------:|:---------:|:----------------------------------:|
+| LGGER_TMPL             |                         |             Stores to the templates folder              |           |   ${package_dir}/lgger/templates   |
+| LGGER_CONF_TMPL        |                         |      Stores the name of Lgger config template file      |           |        lgger.conf.template         |
+| LGGER_LOG_NAME         | default_filename        | Default log name if none is being provided in the code. |     Y     |     log_%Y-%m-%d `date format`     |
+| LGGER_LOG_EXTN         | default_file_extension  |               Default log file extention.               |     Y     |                .log                |
+| LGGER_LOG_DIR          | default_log_folder      |                 Default log directory.                  |     Y     |             ./logging              |
+| LGGER_ENC              | log_encoding            |                  Default log encoding.                  |     Y     |               utf-8                |
+| LGGER_TIMESTAMP_FORMAT | datetimeformat          |           Log timestamp, used inside the log.           |     Y     | %Y-%b-%d %H:%M:%S:%f `date format` |
+| LGGER_CWD              |                         |          Stores the current working directory.          |           |            ${getcwd()}             |
 
 If you need to change the default values, you can either:
 * change the `${LGGER_LOG_DIR}/lgger.conf` file directly
