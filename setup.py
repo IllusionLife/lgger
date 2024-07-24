@@ -10,7 +10,7 @@ long_description = (here / "README.md").read_text(encoding="utf-8")
 # Fields marked as "Optional" may be commented out.
 setup(
     name="lgger",
-    version="0.1.3.3",
+    version="0.1.3.4",
     description="A package for writing logs to log files.",
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -25,7 +25,6 @@ setup(
     keywords="logging, simple, files",
     python_requires=">=3.7, <4",
     package_dir={"": "lgger"},
-    packages=find_packages("lgger"),
     package_data={"templates":["*.template"]},
     include_package_data=True,
 )
