@@ -14,6 +14,11 @@ All that needs to be done is to install the package and import it.
 
 Using pip:
 ```
+pip install lgger
+```
+
+Using github repo:
+```
 pip install git+https://github.com/IllusionLife/lgger.git
 ```
 
