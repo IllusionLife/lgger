@@ -145,4 +145,4 @@ called function.
 
 [Lgger template]: https://github.com/IllusionLife/lgger/tree/main/lgger/templates/lgger.conf.template
 [env file]: https://github.com/IllusionLife/lgger/tree/main/lgger/env.py
-[Log level / Severity]: https://github.com/IllusionLife/lgger/tree/main#log-level-/-severity
+[Log level / Severity]: https://github.com/IllusionLife/lgger/tree/main#log-level--severity
