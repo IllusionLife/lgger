@@ -1,5 +1,5 @@
 from os import environ, getcwd, mkdir
-from os.path import isdir, isfile, dirname
+from os.path import isdir, isfile
 from re import findall
 
 from lgger.lgger_src.file_handler import FileLog, FILE_READ, FILE_APPEND
@@ -23,7 +23,6 @@ class LogConf(FileLog):
         self.open_log(self.__conf_dir, self.__conf_file, FILE_READ)
         self.data = {conf.split('=')[0].strip(): conf.split('=')[1].strip() for conf in self.read_file()}
         for conf_name, conf_val in self.data.items():
-
             temp = valid_number(conf_val)
             if temp:
                 self.data[conf_name] = temp

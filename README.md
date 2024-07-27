@@ -10,9 +10,14 @@ Any ideas for improvements and criticism is welcomed.
 ## Setup:
 As a lazy person, the setup is one of the more unpleasant parts of each
 project. This is why I have made this package to work with minimal setup required.
+All that needs to be done is to install the package and import it.
 
-All that needs to be done is to install the package and import it. Importing
-the package will create enviromental variables for the session, which 
+Using pip:
+```
+pip install git+https://github.com/IllusionLife/lgger.git
+```
+
+When used, the package will set temporary enviromental variables, which 
 can be overwritten for customization. Those enviromental variables are
 intended to create a configuration file by using the [Lgger template] file.
 
@@ -39,16 +44,15 @@ If you need to change the default values, you can either:
     will create the conf file automatically.
   * or call `resolve_template()`, which will do the same as above.
 
-
 ## How to use:
 After installing and importing the package, you can use the `log(msg)` directly, which
 will create a log file according to the configuration file mentioned above.
 You can also create a custom log file by creating a `Lgger()` object. I will provide demonstrations
 for both here:
 
-### Using `log(msg)`
+### Using `log(msg, lvl=None, *args)`
 
-Too lazy to create, store and handle a log class? Then don't.
+Too lazy to create, store and handle a `Lgger()` object? Then don't.
 By calling log("Your message"), the package will create a log folder
 in your pre-configured directory (by default
 the current working directory) in a separate folder.
@@ -56,6 +60,16 @@ the current working directory) in a separate folder.
 import lgger
 
 lgger.log("Hello World!")
+```
+
+You can also select a log level/severity and add any additional parameters to
+be printed at the end of the log message. For more info on the log severity, please
+check the [Log level / Severity] section.
+```
+import lgger
+
+lgger.log("This is an error!", LogLvl.ERROR)
+lgger.log("string", LogLvl.DEBUG, {more: "data"})
 ```
 
 ### Using the `create_log(filename, filepath)` function
@@ -79,6 +93,26 @@ create an object similarly to the `create_log()` function, but will not assign i
 decorators ignore the current object and creating a new `Lgger()` object
 using the default values.
 
+## Log level / Severity:
+Just as any other logging library out there, I have added a level/severity
+system to the logs. You can add logs as INFO, debug using DEBUG or an error
+with ERROR.
+
+All those are saved in the `LogLvl` class and to use it, you just have to
+provide the argument in the log function in the following format:
+`LogLvl.{level}`.
+
+The levels are as follows:
+
+|   Level   | Value | Example        | Usage                                                                                                               |
+|:---------:|:-----:|----------------|---------------------------------------------------------------------------------------------------------------------|
+|   DEBUG   |   0   | LogLvl.DEBUG   | Used to track information for developers.                                                                           |
+|   INFO    |   1   | LogLvl.INFO    | Used to log general information.                                                                                    |
+|  WARNING  |   2   | LogLvl.WARNING | A warning message, pointing to a discrepancy that should not affect the process, but could lead to possible issues. |
+|   ERROR   |   3   | LogLvl.ERROR   | This is used for errors or error messages, that doesn't lead to the application to stop.                            |
+|   FATAL   |   4   | LogLvl.FATAL   | This is an error log, which if used prior to an application failure due to an exception or something else.          |
+
+Please note that the provided usage is imperative. You can use them as you wish.
 
 ## Methods
 `Lgger()` has a few methods, that can be used:
@@ -97,14 +131,18 @@ Now, this is most probably the most useful part of this whole package.
 In order to keep track of what is being provided to the functions, how much time
 or whatever needs to be checked/tracked in the future, there are decorators
 that will do this. For the time being, I made them work with a global
-`Lgger()` object, that is stored in the package.
+`Lgger()` object, that is stored in the package. They are also stackable, meaning
+you can use more than one decorator to the same function.
 
 * `@time_performance` - This will time the approximate execution time for
 the called function. The time is tracked in seconds, with a precision to
 the microseconds.
 * `@log_args` - This decorator will log the arguments, provided in the
 called function. Both *args and **kwargs will be logged.
+* `@log_return` - This decorator will log the return value of the
+called function.
 
 
 [Lgger template]: https://github.com/IllusionLife/lgger/tree/main/lgger/templates/lgger.conf.template
 [env file]: https://github.com/IllusionLife/lgger/tree/main/lgger/env.py
+[Log level / Severity]: https://github.com/IllusionLife/lgger/tree/main#log-level-/-severity

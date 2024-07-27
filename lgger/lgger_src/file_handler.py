@@ -76,6 +76,8 @@ class FileLog:
 
             self.__log_fp = open(self.__log_dir + self.__log_name, access_mode, encoding=enc)
             self.__file_mode = access_mode
+        except FileNotFoundError:
+            raise FileLogException(f"File {self.__log_dir + self.__log_name} not found.")
         except FileLogException as fe:
             raise fe
         except Exception as e:
