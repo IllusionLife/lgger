@@ -12,11 +12,6 @@ As a lazy person, the setup is one of the more unpleasant parts of each
 project. This is why I have made this package to work with minimal setup required.
 All that needs to be done is to install the package and import it.
 
-Using pip:
-```
-pip install lgger
-```
-
 Using github repo:
 ```
 pip install git+https://github.com/IllusionLife/lgger.git
